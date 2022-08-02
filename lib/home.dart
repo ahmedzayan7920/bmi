@@ -21,7 +21,7 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Home"),
+        title: const Text("Home"),
         centerTitle: true,
       ),
       body: SafeArea(
@@ -37,7 +37,7 @@ class _HomePageState extends State<HomePage> {
             ),
             Expanded(
               child: Container(
-                margin: EdgeInsets.symmetric(horizontal: 12),
+                margin: const EdgeInsets.symmetric(horizontal: 12),
                 decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(15),
                     color: Colors.blueGrey),
@@ -50,7 +50,7 @@ class _HomePageState extends State<HomePage> {
                       crossAxisAlignment: CrossAxisAlignment.end,
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        Text("${height}",
+                        Text("$height",
                             style: Theme.of(context).textTheme.headline1),
                         Text("  cm",
                             style: Theme.of(context).textTheme.headline2),
@@ -82,7 +82,7 @@ class _HomePageState extends State<HomePage> {
                   borderRadius: BorderRadius.circular(15), color: Colors.teal),
               width: double.infinity,
               height: MediaQuery.of(context).size.height / 19,
-              margin: EdgeInsets.all(12),
+              margin: const EdgeInsets.all(12),
               child: ElevatedButton(
                   onPressed: () {
                     result = weight / pow((height / 100), 2);
@@ -95,7 +95,7 @@ class _HomePageState extends State<HomePage> {
                       );
                     }));
                   },
-                  child: Text(
+                  child: const Text(
                     "Calculate",
                     style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
                   )),
@@ -115,7 +115,7 @@ class _HomePageState extends State<HomePage> {
           });
         },
         child: Container(
-          margin: EdgeInsets.fromLTRB(12, 12, 6, 12),
+          margin: const EdgeInsets.fromLTRB(12, 12, 6, 12),
           decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(10),
               color: (isMale && type == "male") || (!isMale && type == "female")
@@ -129,7 +129,7 @@ class _HomePageState extends State<HomePage> {
                 size: 90,
                 color: Colors.white,
               ),
-              SizedBox(height: 50),
+              const SizedBox(height: 50),
               Text(
                 type == "male" ? "Male" : "Female",
                 style: Theme.of(context).textTheme.headline2,
@@ -144,7 +144,7 @@ class _HomePageState extends State<HomePage> {
   Expanded expanded2(BuildContext context, String type) {
     return Expanded(
         child: Container(
-      margin: EdgeInsets.fromLTRB(12, 12, 6, 12),
+      margin: const EdgeInsets.fromLTRB(12, 12, 6, 12),
       decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(15), color: Colors.blueGrey),
       child: Column(
@@ -152,13 +152,13 @@ class _HomePageState extends State<HomePage> {
         children: [
           Text(type == "weight" ? "Weight" : "Age",
               style: Theme.of(context).textTheme.headline2),
-          Text(type == "weight" ? "${weight}" : "${age}",
+          Text(type == "weight" ? "$weight" : "$age",
               style: Theme.of(context).textTheme.headline1),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
               FloatingActionButton(
-                child: Icon(Icons.remove),
+                child: const Icon(Icons.remove),
                 heroTag: type == "weight" ? "decrease weight" : "decrease age",
                 mini: true,
                 onPressed: () {
@@ -172,7 +172,7 @@ class _HomePageState extends State<HomePage> {
                 },
               ),
               FloatingActionButton(
-                child: Icon(Icons.add),
+                child: const Icon(Icons.add),
                 heroTag: type == "weight" ? "increase weight" : "increase age",
                 mini: true,
                 onPressed: () {
